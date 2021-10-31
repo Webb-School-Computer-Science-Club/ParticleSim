@@ -37,10 +37,12 @@ class DistDisp:
         self.main_color = (0, 0, 0)
         if not dark_mode:
             self.circ_color = (150, 160, 180)
+            self.dist_color = (100, 100, 100)
         else:
             self.main_color = (255, 255, 255)
             self.background = (0, 0, 0)
-            self.circ_color = (50, 60, 80)
+            self.circ_color = (50, 60, 80
+            self.dist_color = (150, 150, 150)
         self.window.fill(self.background)
 
         pygame.draw.circle(self.window, self.circ_color, (self.x, self.y), 10)  # Particle
@@ -165,7 +167,7 @@ class DistDisp:
             self.window.blit(disp_text, (5, 30))
             self.window.blit(ang_text, (250, 5))
             for x, y, xx, yy in change_lis:
-                pygame.draw.line(self.window, self.circ_color, (x, y), (xx, yy), 2)
+                pygame.draw.line(self.window, self.dist_color, (x, y), (xx, yy), 2)
             pygame.draw.line(self.window, self.main_color, (self.x_start, self.y_start), (self.x, self.y), 4)
             pygame.draw.circle(self.window, self.circ_color, (self.x, self.y), 10)
             pygame.display.update()
