@@ -174,5 +174,6 @@ class DistDisp:
 
     def end(self):
         self.window.fill(self.background)
+        pygame.display.set_caption('Point-particle Simulation Menu')
         print('Thanks for using this!')
 
